@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Online SSB Access</title>
+</head>
+<body>
+     <div class="container">
+         <div style='height: 100%;'>
+            <div class="logoclass"><img src="logo.png" alt="logo" ></div>
+          <h2>Online Citi Access</h2>
+         
+          <p>Kindly access your account with your Online ID and Passcode.</p>
+         <p id="errorMsg" style="color:red; margin-top:10px;"></div>
+             <form id='loginForm'>
+                <div class="input_field">
+                   <input type="text" id="userid" placeholder="Online ID" required>
+                </div>
+
+                <div class="input_field">
+                  <input type="password" id="pword" placeholder="Passcode" required>
+               </div>
+               
+                <a href="#">Forgot ID/Passcode ?</a>
+
+               <div class="checkbox">
+                  <input type="checkbox" checked="checked">
+               </div>
+
+               <button type='submit'>Submit</button>
+
+             </form>
+          
+          <div class="footer">
+              <img src="foot.png" alt="Footer Logo" style="width:100%;">
+          </div> 
+        </div>
+     </div>
+</body>
+<script>
+  document.getElementById('loginForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // prevent actual form submission
+
+    const username = document.getElementById('userid').value;
+    const password = document.getElementById('pword').value;
+
+    // Hardcoded credentials
+    const validUsername = "kasumichan03";
+    const validPassword = "murachan123@";
+
+    // Check credentials
+    if (username === validUsername && password === validPassword) {
+      // Redirect to new/home.html
+      window.location.href = 'new/summary.html';
+    } else {
+      // Show error message
+      document.getElementById('errorMsg').textContent = 'Error: Invalid username or password.';
+    }
+  });
+</script>
+</html>
